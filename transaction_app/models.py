@@ -1,16 +1,24 @@
 from django.db import models
 
+
 class Transaction(models.Model):
-    timestamp = models.DateTimeField(auto_now=True)  # Automatically updates the timestamp on creation or modification
-    transaction_amount = models.DecimalField(max_digits=10, decimal_places=2)  # To handle monetary values
-    transaction_name = models.CharField(max_length=255)  # Name or description of the transaction
-    bill_url = models.URLField(max_length=500, blank=True, null=True)  # Optional field for bill URL
-    transaction_screenshot_url = models.URLField(max_length=500, blank=True, null=True)  # Optional field for screenshot URL
-    account_balance = models.DecimalField(max_digits=10, decimal_places=2)  # Account balance after this transaction
-    comments = models.TextField(blank=True, null=True)  # Optional field for additional comments
+    timestamp = models.DateTimeField(auto_now=True)
+    transaction_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    transaction_name = models.CharField(max_length=255)
+    bill_url = models.URLField(max_length=500, blank=True, null=True)
+    transaction_screenshot_url = models.URLField(
+        max_length=500, blank=True, null=True)
+    account_balance = models.DecimalField(max_digits=10, decimal_places=2)
+    comments = models.TextField(blank=True, null=True)
+    TRANSACTION_TYPES = [
+        ("Cr", "Credit"),
+        ("Dr", "Debit"),
+    ]
+    transaction_type = models.CharField(
+        max_length=2, choices=TRANSACTION_TYPES)
 
     class Meta:
-        ordering = ['-timestamp']  # Transactions ordered by timestamp descending
+        ordering = ['-timestamp']
         verbose_name = 'Transaction'
         verbose_name_plural = 'Transactions'
 
