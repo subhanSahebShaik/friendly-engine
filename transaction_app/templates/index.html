@@ -73,8 +73,8 @@
                 class="{% if transaction.transaction_type == 'Cr' %}credit-row{% else %}debit-row{% endif %}"
               >
                 <td>{{ forloop.counter }}</td>
-                <td>{{ transaction.happened_at }}</td>
-                <td>{{ transaction.timestamp }}</td>
+                <td>{{ transaction.transaction_happened }}</td>
+                <td>{{ transaction.last_updated }}</td>
                 <td>{{ transaction.transaction_name }}</td>
                 <td>{{ transaction.transaction_amount }}</td>
                 <td>{{ transaction.account_balance }}</td>
