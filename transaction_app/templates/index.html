@@ -57,7 +57,8 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Timestamp</th>
+                <th>Happened At</th>
+                <th>Last Updated</th>
                 <th>Transaction Name</th>
                 <th>Amount</th>
                 <th>Account Balance</th>
@@ -72,6 +73,7 @@
                 class="{% if transaction.transaction_type == 'Cr' %}credit-row{% else %}debit-row{% endif %}"
               >
                 <td>{{ forloop.counter }}</td>
+                <td>{{ transaction.happened_at|date:"d-m-Y H:i:s" }}</td>
                 <td>{{ transaction.timestamp|date:"d-m-Y H:i:s" }}</td>
                 <td>{{ transaction.transaction_name }}</td>
                 <td>{{ transaction.transaction_amount }}</td>
