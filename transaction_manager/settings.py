@@ -79,9 +79,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'transaction_manager',
         'USER': 'transaction_manager_user',
-        'PASSWORD':'7jX3ooX09vBlCpLgAv6WawGwNgCfblCI',
-        'HOST':'dpg-cubkgbtds78s73acq4c0-a.singapore-postgres.render.com',
-        'PORT':'5432'
+        'PASSWORD': '7jX3ooX09vBlCpLgAv6WawGwNgCfblCI',
+        'HOST': 'dpg-cubkgbtds78s73acq4c0-a.singapore-postgres.render.com',
+        'PORT': '5432'
     }
 }
 
